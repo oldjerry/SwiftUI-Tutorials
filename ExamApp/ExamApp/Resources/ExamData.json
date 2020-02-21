@@ -1,0 +1,39 @@
+[
+    {
+        "id": 1001,
+        "question": "Quiz 1",
+        "choices": [
+            "longitude",
+            "latitude",
+            "C",
+            "D"
+        ],
+        "type": "Single",
+        "answers": ["A"],
+        "selected": []
+    },
+    {
+        "id": 1002,
+        "question": "Quiz 2",
+        "choices": [
+            "longitude",
+            "latitude",
+            "C",
+            "D"
+        ],
+        "type": "Multiple",
+        "answers": ["A","B"],
+        "selected": []
+    },
+    {
+        "id": 1003,
+        "question": "Quiz 3",
+        "choices": [
+            "longitude",
+            "latitude"
+        ],
+        "type": "Single",
+        "answers": ["A"],
+        "selected": []
+    },
+]
