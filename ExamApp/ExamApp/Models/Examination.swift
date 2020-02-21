@@ -16,11 +16,11 @@ struct Exam: Decodable, Identifiable {
     var question: String
     var choices: [String]
     var answers: Set<String>
-    var selectd: Set<String>
+    var selected: Set<String>
     
     var isRight: Bool {
         get {
-            return answers == selectd
+            return answers == selected
         }
     }
     

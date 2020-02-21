@@ -97,13 +97,9 @@ struct ButtonBarView: View {
                 .padding()
                 
             }
-            
-            
-            
-            
-            
-        }
         
+        }
+        .frame(height: 50)
     }
 }
 

@@ -10,31 +10,35 @@ import SwiftUI
 
 struct QuizCardView: View {
     @EnvironmentObject var user: User
+    let exam: Exam
     
     var body: some View {
         VStack (alignment: .leading) {
             Image("default")
+                .resizable()
+               // .clipShape(Rect)
                 .cornerRadius(10)
                 .padding()
             
             
-            Text("Hello, World! \(user.exams[user.currentIndex].question)")
+            Text(exam.question)
                 .font(.subheadline)
                 .fontWeight(.semibold)
                 .multilineTextAlignment(.leading)
-                .padding(.leading, 25)
+                .padding(.leading)
                 
         }
-        
+        .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+        .frame(height:300)
     }
+    
 }
 
 
 #if DEBUG
 struct QuizCardView_Previews: PreviewProvider {
     static var previews: some View {
-        QuizCardView()
-            .environmentObject(User())
+        QuizCardView(exam: examData[0])
     }
 }
 #endif
