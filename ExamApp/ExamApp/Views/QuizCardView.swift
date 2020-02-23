@@ -9,19 +9,23 @@
 import SwiftUI
 
 struct QuizCardView: View {
-    @EnvironmentObject var user: User
+   // @EnvironmentObject var user: User
     let exam: Exam
     
+    func getQuiz() -> String {
+        (self.exam.type == .Single) ? self.exam.question : "\(self.exam.question) [Multiple answers]"
+    }
+    
     var body: some View {
+        
         VStack (alignment: .leading) {
-            Image("default")
+            // Image("default")
+            exam.image
                 .resizable()
-               // .clipShape(Rect)
                 .cornerRadius(10)
                 .padding()
             
-            
-            Text(exam.question)
+            Text(getQuiz())
                 .font(.subheadline)
                 .fontWeight(.semibold)
                 .multilineTextAlignment(.leading)

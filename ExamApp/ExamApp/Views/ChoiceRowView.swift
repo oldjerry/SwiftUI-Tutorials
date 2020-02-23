@@ -1,5 +1,5 @@
 //
-//  ChoseRowView.swift
+//  ChooseRowView.swift
 //  ExamApp
 //
 //  Created by Jerry Sun on 2020/2/19.
@@ -8,22 +8,24 @@
 
 import SwiftUI
 
-struct ChoseRowView {
+struct ChoiceRowView {
     
     private let onButtonTaped: (_ select:String) -> Void
+    private let choice: String
     private let select: String
     private let isOn : Bool
     
     
-    init(onButtonTaped action:  @escaping ((_ select:String) -> Void), select: String, isOn: Bool ) {
+    init(onButtonTaped action:  @escaping ((_ select:String) -> Void), choice: String, select: String, isOn: Bool ) {
         self.onButtonTaped = action
         self.isOn = isOn
         self.select = select
+        self.choice = choice
     }
 
 }
 
-extension  ChoseRowView: View {
+extension  ChoiceRowView: View {
     var body: some View {
         HStack {
             ZStack (alignment: .leading) {
@@ -49,12 +51,12 @@ extension  ChoseRowView: View {
 
 
                     }
-                    // .offset(x: 5, y: 0)
-                    // .padding(.trailing)
-                    .padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 10))
+                    .padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 0))
                     .animation(.default)
 
-                    Text("Test")
+                    Text(choice)
+                        .font(.headline)
+                      //  .padding()
                 }
             }
             
@@ -67,7 +69,7 @@ extension  ChoseRowView: View {
 #if DEBUG
 struct ChoseRowView_Previews: PreviewProvider {
     static var previews: some View {
-        ChoseRowView(onButtonTaped: {_ in}, select: "A", isOn: true )
+        ChoiceRowView(onButtonTaped: {_ in}, choice: "Test", select: "A", isOn: true )
     }
 }
 #endif

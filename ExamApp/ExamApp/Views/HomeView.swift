@@ -10,15 +10,14 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var user: User
-   // @State var select: String = "A"
+    let startingValue = Int(("A" as UnicodeScalar).value) // 65
     
     func onSelectBotton(select: String) -> Void {
-        let exam = user.exams[user.currentIndex]
-        
+         
         if user.exams[user.currentIndex].selected.contains(select) {
             user.exams[user.currentIndex].selected.remove(select)
         } else {
-            if exam.type == .Single {
+            if user.exams[user.currentIndex].type == .Single {
                 user.exams[user.currentIndex].selected.removeAll()
             }
             user.exams[user.currentIndex].selected.insert(select)
@@ -47,33 +46,27 @@ struct HomeView: View {
     }
     
     var body: some View {
+        
         VStack {
             Spacer()
             HStack {
-                Text(user.profile.username)
+                Text(user.getUserName())
                 Spacer()
-                Text("\(user.currentIndex+1)/\(user.quizCount)")
+                Text(user.getQuizNumofCounttoString())
             }
             Spacer()
             Divider()
             
             //       Spacer()
-            
-            QuizCardView(exam: self.user.exams[self.user.currentIndex])
+            QuizCardView(exam: user.getCurrentExam())
                 .padding()
             
             
             VStack {
-                ChoseRowView(onButtonTaped: onSelectBotton, select: "A", isOn: isSelected(select: "A") )
-                ChoseRowView(onButtonTaped: onSelectBotton, select: "B", isOn: isSelected(select: "B") )
-                ChoseRowView(onButtonTaped: onSelectBotton, select: "C", isOn: isSelected(select: "C") )
-                ChoseRowView(onButtonTaped: onSelectBotton, select: "D", isOn: isSelected(select: "D") )
+                ChoicesView(choices: user.getCurrentExam().choices)
             }
             .padding()
             
-//            Button(action: {self.select = "B"}){
-//                Text("test")
-//            }
             
             //    Spacer()
             ButtonBarView()

@@ -1,39 +1,44 @@
 [
     {
         "id": 1001,
-        "question": "Quiz 1",
+        "question": "What animal is this?",
+        "imageName": "cat",
         "choices": [
-            "longitude",
-            "latitude",
-            "C",
-            "D"
+            "It's a Tigier",
+            "It's a Cat",
+            "It's a Lion",
+            "It's a Cheetah"
         ],
         "type": "Single",
-        "answers": ["A"],
+        "answers": ["B"],
         "selected": []
     },
     {
         "id": 1002,
-        "question": "Quiz 2",
+        "question": "What breed is this dog?",
+        "imageName": "dog",
         "choices": [
-            "longitude",
-            "latitude",
-            "C",
-            "D"
+            "This dog is a Husky",
+            "This dog is a Golden Retriever",
+            "This dog is a Welsh Corgi",
+            "This dog is a Pomeranin"
         ],
-        "type": "Multiple",
-        "answers": ["A","B"],
+        "type": "Single",
+        "answers": ["C"],
         "selected": []
     },
     {
         "id": 1003,
-        "question": "Quiz 3",
+        "question": "Which statements are correct about this picture?",
+        "imageName": "red-rose-flower",
         "choices": [
-            "longitude",
-            "latitude"
+            "It's a plant",
+            "It's a flower",
+            "It's a Pink flower",
+            "It;s a Red Rose"
         ],
-        "type": "Single",
-        "answers": ["A"],
+        "type": "Multiple",
+        "answers": ["A","B","D"],
         "selected": []
     },
 ]

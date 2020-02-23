@@ -12,36 +12,6 @@ struct ButtonBarView: View {
     
     @EnvironmentObject var user: User
     
-    var isFirstQuiz: Bool {
-        get {
-            return self.user.currentIndex == 0
-        }
-    }
-    
-    var isLastQuiz: Bool {
-        get {
-            return self.user.currentIndex == self.user.exams.count - 1
-        }
-    }
-    
-    var quizCount: Int {
-        get {
-            return self.user.exams.count
-        }
-    }
-    
-    func getCurrQuizIndex() -> Int {
-        return self.user.currentIndex
-    }
-    
-    func setPrevQuizIndex() -> Void {
-        self.user.currentIndex = (self.user.currentIndex > 0) ? self.user.currentIndex-1 : 0
-    }
-    func setNextQuizIndex() -> Void {
-        self.user.currentIndex = (self.user.currentIndex < self.user.exams.count-1) ?
-            self.user.currentIndex+1 : self.user.exams.count-1
-    }
-    
     var body: some View {
         HStack {
             
@@ -56,16 +26,16 @@ struct ButtonBarView: View {
 
                 
                 HStack {
-                    Button(action: {self.setPrevQuizIndex()}){
+                    Button(action: {self.user.setPrevQuizIndex()}){
                         Image(systemName: "chevron.left")
                             .frame(width: 50, height: 50, alignment: .center)
                             .clipped()
                             .background(Color.gray.opacity(0.5))
                             .cornerRadius(5)
-                            .foregroundColor(self.isFirstQuiz ? Color.gray : Color.white)
+                            .foregroundColor(self.user.isFirstQuiz ? Color.gray : Color.white)
                         
                     }
-                    .disabled(self.isFirstQuiz)
+                    .disabled(self.user.isFirstQuiz)
                     .padding(.trailing)
                     .animation(.default)
                     
@@ -75,22 +45,22 @@ struct ButtonBarView: View {
                         Text("Submit")
                             .font(.title)
                     }
-                    .disabled(!self.isLastQuiz)
-                    .foregroundColor(self.isLastQuiz ? Color.white : Color.gray.opacity(0.2))
+                    .disabled(!self.user.isLastQuiz)
+                    .foregroundColor(self.user.isLastQuiz ? Color.white : Color.gray.opacity(0.2))
                     .shadow(color: Color.black.opacity(0.4), radius: 3, x: 1, y: 2)
                     .animation(.default)
                     
                     Spacer()
                     
-                    Button(action: {self.setNextQuizIndex()}){
+                    Button(action: {self.user.setNextQuizIndex()}){
                         Image(systemName: "chevron.right")
                             .frame(width: 50, height: 50, alignment: .center)
                             .clipped()
                             .background(Color.gray.opacity(0.5))
                             .cornerRadius(5)
-                            .foregroundColor(self.isLastQuiz ? Color.gray : Color.white)
+                            .foregroundColor(self.user.isLastQuiz ? Color.gray : Color.white)
                     }
-                    .disabled(self.isLastQuiz)
+                    .disabled(self.user.isLastQuiz)
                     .padding(.leading)
                     .animation(.default)
                 }

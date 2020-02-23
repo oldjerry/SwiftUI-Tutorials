@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C40619B124021C9A00606ADD /* red-rose-flower.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C40619AE24021C9A00606ADD /* red-rose-flower.jpg */; };
+		C40619B224021C9A00606ADD /* cat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C40619AF24021C9A00606ADD /* cat.jpg */; };
+		C40619B42402221F00606ADD /* dog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C40619B32402221F00606ADD /* dog.jpg */; };
 		C4288E3823FB895F00FF95D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4288E3723FB895F00FF95D8 /* AppDelegate.swift */; };
 		C4288E3A23FB895F00FF95D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4288E3923FB895F00FF95D8 /* SceneDelegate.swift */; };
 		C4288E3E23FB896300FF95D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4288E3D23FB896300FF95D8 /* Assets.xcassets */; };
@@ -23,10 +26,14 @@
 		C46F19EC23FBB49200152E18 /* BorderedViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46F19EB23FBB49100152E18 /* BorderedViewModifier.swift */; };
 		C46F19EE23FBB5BF00152E18 /* KeyboardFollower.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46F19ED23FBB5BF00152E18 /* KeyboardFollower.swift */; };
 		C46F19F123FBBF6000152E18 /* ButtonBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46F19F023FBBF6000152E18 /* ButtonBarView.swift */; };
-		C46F19F723FCE64E00152E18 /* ChoseRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46F19F623FCE64D00152E18 /* ChoseRowView.swift */; };
+		C46F19F723FCE64E00152E18 /* ChoiceRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46F19F623FCE64D00152E18 /* ChoiceRowView.swift */; };
+		C4E0703F2402673C0046ADB0 /* ChoicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E0703E2402673C0046ADB0 /* ChoicesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C40619AE24021C9A00606ADD /* red-rose-flower.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "red-rose-flower.jpg"; sourceTree = "<group>"; };
+		C40619AF24021C9A00606ADD /* cat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat.jpg; sourceTree = "<group>"; };
+		C40619B32402221F00606ADD /* dog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dog.jpg; sourceTree = "<group>"; };
 		C4288E3423FB895F00FF95D8 /* ExamApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExamApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4288E3723FB895F00FF95D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4288E3923FB895F00FF95D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,7 +52,8 @@
 		C46F19EB23FBB49100152E18 /* BorderedViewModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedViewModifier.swift; sourceTree = "<group>"; };
 		C46F19ED23FBB5BF00152E18 /* KeyboardFollower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardFollower.swift; sourceTree = "<group>"; };
 		C46F19F023FBBF6000152E18 /* ButtonBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonBarView.swift; sourceTree = "<group>"; };
-		C46F19F623FCE64D00152E18 /* ChoseRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoseRowView.swift; sourceTree = "<group>"; };
+		C46F19F623FCE64D00152E18 /* ChoiceRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceRowView.swift; sourceTree = "<group>"; };
+		C4E0703E2402673C0046ADB0 /* ChoicesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoicesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +120,9 @@
 		C4288E5823FB97C200FF95D8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C40619B32402221F00606ADD /* dog.jpg */,
+				C40619AF24021C9A00606ADD /* cat.jpg */,
+				C40619AE24021C9A00606ADD /* red-rose-flower.jpg */,
 				C4288E5923FB98A900FF95D8 /* ExamData.json */,
 			);
 			path = Resources;
@@ -139,11 +150,12 @@
 		C46F19F223FCC06300152E18 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C4E0703E2402673C0046ADB0 /* ChoicesView.swift */,
 				C4288E5423FB922A00FF95D8 /* RegisterView.swift */,
 				C4288E5623FB923600FF95D8 /* HomeView.swift */,
 				C46F19E923FBAEC000152E18 /* QuizCardView.swift */,
 				C46F19F023FBBF6000152E18 /* ButtonBarView.swift */,
-				C46F19F623FCE64D00152E18 /* ChoseRowView.swift */,
+				C46F19F623FCE64D00152E18 /* ChoiceRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -214,9 +226,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C40619B42402221F00606ADD /* dog.jpg in Resources */,
 				C4288E4423FB896300FF95D8 /* LaunchScreen.storyboard in Resources */,
+				C40619B124021C9A00606ADD /* red-rose-flower.jpg in Resources */,
 				C4288E4123FB896300FF95D8 /* Preview Assets.xcassets in Resources */,
 				C4288E5A23FB98A900FF95D8 /* ExamData.json in Resources */,
+				C40619B224021C9A00606ADD /* cat.jpg in Resources */,
 				C4288E3E23FB896300FF95D8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,9 +244,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4288E4F23FB8AF200FF95D8 /* Examination.swift in Sources */,
-				C46F19F723FCE64E00152E18 /* ChoseRowView.swift in Sources */,
+				C46F19F723FCE64E00152E18 /* ChoiceRowView.swift in Sources */,
 				C46F19EE23FBB5BF00152E18 /* KeyboardFollower.swift in Sources */,
 				C4288E5123FB8ECF00FF95D8 /* Data.swift in Sources */,
+				C4E0703F2402673C0046ADB0 /* ChoicesView.swift in Sources */,
 				C4288E5323FB8F1700FF95D8 /* UserManager.swift in Sources */,
 				C46F19EA23FBAEC000152E18 /* QuizCardView.swift in Sources */,
 				C4288E3823FB895F00FF95D8 /* AppDelegate.swift in Sources */,

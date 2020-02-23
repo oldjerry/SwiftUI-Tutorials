@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import SwiftUI
 
 
 struct Exam: Decodable, Identifiable {
@@ -17,6 +17,7 @@ struct Exam: Decodable, Identifiable {
     var choices: [String]
     var answers: Set<String>
     var selected: Set<String>
+    fileprivate var imageName: String
     
     var isRight: Bool {
         get {
@@ -34,5 +35,11 @@ struct Exam: Decodable, Identifiable {
         case B = "B"
         case C = "C"
         case D = "D"
+    }
+}
+
+extension Exam {
+    var image: Image {
+        ImageStore.shared.image(name: imageName)
     }
 }

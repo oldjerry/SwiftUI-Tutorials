@@ -24,7 +24,7 @@ final class User: ObservableObject {
     
     var isLastQuiz: Bool {
         get {
-            return currentIndex == self.exams.count - 1
+            return currentIndex == exams.count - 1
         }
     }
     
@@ -38,9 +38,23 @@ final class User: ObservableObject {
         return currentIndex
     }
     
+    func getQuizNumofCounttoString() -> String
+    {
+        return "\(currentIndex+1)/\(exams.count)"
+    }
+    
+    func getUserName() -> String {
+        return profile.username
+    }
+    
+    func getCurrentExam() -> Exam {
+        return exams[currentIndex]
+    }
+    
     func setPrevQuizIndex() -> Void {
         currentIndex = (currentIndex > 0) ? currentIndex-1 : 0
     }
+    
     func setNextQuizIndex() -> Void {
         currentIndex = (currentIndex < exams.count-1) ? currentIndex+1 : exams.count-1
     }
