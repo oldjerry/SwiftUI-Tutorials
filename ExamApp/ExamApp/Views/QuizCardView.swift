@@ -26,7 +26,7 @@ struct QuizCardView: View {
                 .padding()
             
             Text(getQuiz())
-                .font(.subheadline)
+                .font(.headline)
                 .fontWeight(.semibold)
                 .multilineTextAlignment(.leading)
                 .padding(.leading)

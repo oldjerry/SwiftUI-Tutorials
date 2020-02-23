@@ -28,16 +28,17 @@ struct ChoiceRowView {
 extension  ChoiceRowView: View {
     var body: some View {
         HStack {
-            ZStack (alignment: .leading) {
-                Rectangle ()
-                    .frame(height: 45)
-                    .foregroundColor(Color.white)
-                    .cornerRadius(5)
-                    .padding()
-                    .shadow(color: Color.gray.opacity(0.4), radius: 5, x: 1, y: 2)
-
-                HStack {
-                    Button(action: {self.onButtonTaped(self.select)}){
+            Button(action: {self.onButtonTaped(self.select)}){
+                ZStack (alignment: .leading) {
+                    Rectangle ()
+                        .frame(height: 45)
+                        .foregroundColor(Color.white)
+                        .cornerRadius(5)
+                        .padding()
+                        .shadow(color: Color.gray.opacity(0.4), radius: 5, x: 1, y: 2)
+                    
+                    HStack {
+                       
                         ZStack {
                             Rectangle ()
                                 .frame(width: 40, height: 40 )
@@ -48,21 +49,19 @@ extension  ChoiceRowView: View {
                                 .font(.headline)
                                 .foregroundColor(isOn ? Color.white : Color.black)
                         }
-
-
+                        .padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: -10))
+                    
+                        
+                        Text(choice)
+                            .font(.subheadline)
+                            .foregroundColor(.black)
+                            .padding(.trailing)
                     }
-                    .padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 0))
-                    .animation(.default)
-
-                    Text(choice)
-                        .font(.headline)
-                      //  .padding()
                 }
             }
-            
+            .animation(.default)
         }
         .frame(height: 50)
-      //  .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
     }
 }
 
